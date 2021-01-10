@@ -1,0 +1,98 @@
+<!DOCTYPE html>  
+<html>  
+     <head>  
+          <title>Nirma Paper Search</title>  
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+          <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>  
+          <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>  
+          <link rel="icon" type="image/png" href="favicon.ico"/>
+          <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101292720);</script>
+          <script async src="//static.getclicky.com/js"></script>
+     </head>  
+     <style>
+         .active-cyan-3 input[type=text] {
+                border: 1px solid #4dd0e1;
+                box-shadow: 0 0 0 1px #4dd0e1;
+                }
+                .vertical-center {
+                    padding: 30px 0;
+                    text-align: center;
+                    }
+     </style>
+     <body>  
+          <div class="container"> 
+            <div class="page-header"> 
+               <div class="d-flex flex-row">
+                    <div><img src="mondrian3.gif" width="85" height="85"></div>
+                    <div class="mr-auto display-4 p-2">Nirma Previous Year Papers</div>
+                    <div class="vertical-center"><a href="about.html"><button type="button" class="btn btn-outline-dark" >About</button></div></a>
+               </div>
+            </div>
+               <div class="active-cyan-4 mb-3">
+                <input class="form-control" type="text" id="myInputTextField" placeholder="Search" aria-label="Search">
+              </div>
+
+               <table id="data-table" class="display">  
+                    <thead>  
+                         <tr>  
+                              <th>Link</th>  
+                              <th>Paper Name</th> 
+                              <th>Course Name</th>
+                              <th>Course Code</th> 
+                              <th>Paper Year</th>   
+                         </tr>  
+                    </thead>  
+               </table>  
+          </div>  
+     </body>  
+</html>  
+<script>  
+$(document).ready(function(){  
+     $('#data-table').DataTable({ 
+
+        sDom:"tipr",
+        responsive: true,
+        "ajax": {
+            "url": "Data.json",
+            "dataSrc": ""
+        },
+        "language": {
+        "searchPlaceholder": "Search records",
+        "search": "",
+      },
+        "columns": [  
+        { 
+         "data": "Link",
+         "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="' + data + '" target="_blank">' + "Download"+ '</a>';
+            }
+
+            return data;
+         }
+      },
+            {"data":"Paper Name"},  
+            {"data":"Course Name"},
+            {"data":"Course Code"},  
+            {"data":"Paper Year"} 
+             
+        ] ,
+        "columnDefs": [
+            {
+            targets: -1,
+            className: "stripe hover"
+        }
+        ]
+     });  
+     var table = $('#data-table').DataTable();
+ 
+        // #myInput is a <input type="text"> element
+        $('#myInputTextField').on( 'keyup', function () {
+            table.search( this.value ).draw();
+        } );
+});  
+</script> 
