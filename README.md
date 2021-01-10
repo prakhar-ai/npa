@@ -4,11 +4,11 @@ The Project use Datatables for smart searching. Smart searching performs partial
 
 The Data present here is sourced from the official Nirma Library Archive.
 
-# Examples
+## Examples
 * "machine learning may 2018"
 * "cs302"
 * "database manage d to d"
 
-# Inspiration
+## Inspiration
 
 This project is inspired by the MFQP project.
