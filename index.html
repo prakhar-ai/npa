@@ -43,6 +43,15 @@
                     </div>
                </div>
           </div>
+                     <div class="ui container" style="padding-top: 0.5em">
+          <div class="ui info message">
+               <i class="close icon"></i>
+               <div class="header">
+                 Under Development
+               </div>
+               <p>Website UI and additional features are under development.</p>
+             </div>
+          </div>
      <div class="ui container" style="padding: 2em">
      <div class="ui fluid icon input">
           <input type="text" placeholder="Search..." id="myInputTextField" >
@@ -64,6 +73,14 @@
      </body>  
 </html>  
 <script>  
+     $('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+;
 $(document).ready(function(){  
      $('#data-table').DataTable({ 
 
