@@ -11,7 +11,6 @@
           <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
           <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>  
           <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> 
-          <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/DataTables/Plugins/features/pageResize/dataTables.pageResize.min.js"></script>
           <link rel="icon" type="image/png" href="favicon.ico"/>
           <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101292720);</script>
           <script async src="//static.getclicky.com/js"></script>
@@ -26,9 +25,6 @@
                     padding: 30px 0;
                     text-align: center;
                     }
-          div.dataTables_length {
-                   display: none;
-               }
      </style>
           <body>  
           
@@ -62,7 +58,7 @@
         </div>
      </div>
      <div class="ui container">
-               <table id="data-table" class="ui table pageResize">  
+               <table id="data-table" class="ui table">  
                     <thead>  
                          <tr>  
                               <th>Link</th>  
@@ -87,7 +83,7 @@
 ;
 $(document).ready(function(){  
      $('#data-table').DataTable({ 
-        pageResize: true,  
+        "pageLength": 9,  
         sDom:"tipr",
         responsive: true,
         
