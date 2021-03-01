@@ -6,7 +6,9 @@
           <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+          <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
           <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>  
           <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>  
           <link rel="icon" type="image/png" href="favicon.ico"/>
@@ -24,18 +26,30 @@
                     text-align: center;
                     }
      </style>
-     <body>  
-          <div class="container"> 
-            <div class="page-header"> 
-               <div class="d-flex flex-row">
-                    <div class="mr-auto display-4 p-2">Nirma Previous Year Papers</div>
-                    <div class="vertical-center"><a href="about.html"><button type="button" class="btn btn-outline-dark" >About</button></div></a>
-            </div>
-               <div class="active-cyan-4 mb-3">
-                <input class="form-control" type="text" id="myInputTextField" placeholder="Search" aria-label="Search">
-              </div>
-
-               <table id="data-table" class="display">  
+          <body>  
+          
+          <div class="ui attached segment">
+               <div class="ui secondary menu">
+                 <div class="header item">
+                      <h3>Nirma Previous Year Papers</h3>
+                 </div>
+                 <div class="right menu">
+               <a class="item" href="about.html">
+                   About
+               </a>
+               <a class="item">
+                   API
+               </a>
+                    </div>
+               </div>
+          </div>
+     <div class="ui container" style="padding: 2em">
+     <div class="ui fluid icon input">
+          <input type="text" placeholder="Search...">
+        </div>
+     </div>
+     <div class="ui container">
+               <table id="data-table" class="ui table">  
                     <thead>  
                          <tr>  
                               <th>Link</th>  
@@ -45,8 +59,8 @@
                               <th>Paper Year</th>   
                          </tr>  
                     </thead>  
-               </table>  
-          </div>  
+               </table> 
+          </div> 
      </body>  
 </html>  
 <script>  
