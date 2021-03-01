@@ -57,6 +57,10 @@
           <input type="text" placeholder="Search..." id="myInputTextField" >
         </div>
      </div>
+               <div class="ui segment">
+  <div class="ui active dimmer">
+    <div class="ui medium text loader">Loading</div>
+  </div>
      <div class="ui container">
                <table id="data-table" class="ui table">  
                     <thead>  
@@ -70,6 +74,8 @@
                     </thead>  
                </table> 
           </div> 
+</div>
+
      </body>  
 </html>  
 <script>  
@@ -87,6 +93,9 @@ $(document).ready(function(){
         sDom:"tipr",
         responsive: true,
         processing: true,
+        "initComplete": function( settings, json ) {
+            $('.segment').dimmer('hide');
+          }
         
         "ajax": {
             "url": "Data.json",
