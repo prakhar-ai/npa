@@ -6,7 +6,9 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
           <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
-          <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>  
+          <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/> 
+          <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css"/> 
+          <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css"/> 
           <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> 
           <link rel="icon" type="image/png" href="favicon.ico"/>
           <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101292720);</script>
@@ -86,6 +88,9 @@ $(document).ready(function(){
         sDom:"tipr",
         responsive: true,
         processing: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
         "ajax": {
             "url": "Data.json",
             "dataSrc": "",
